@@ -12,7 +12,10 @@ final class ClassFinder
 
 	private static WeakMap $caching;
 
-	public static function findClasses(Finder $directory): iterable
+	/**
+	 * @return string[]
+	 */
+	public static function findClasses(Finder $directory): array
 	{
 		if (!isset(self::getCaching()[$directory])) {
 			$cache = [];
